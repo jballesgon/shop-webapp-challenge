@@ -1,13 +1,10 @@
 <template>
-  <nav class="p-4 bg-white flex items-center">
-    <router-link class="text-orange-600 mr-4" :to="{ name: 'ProductList' }">
+  <nav class="p-4 bg-white flex items-center justify-between">
+    <router-link class="text-orange-600" :to="{ name: 'ProductList' }">
       <i class="fas fa-shopping-basket fa-2x"></i>
     </router-link>
     <h1 class="text-2xl">{{ pageTitle }}</h1>
-    <router-link
-      class="bg-orange-600 hover:bg-orange-500 text-white px-3 py-2 rounded-md ml-auto"
-      :to="{ name: 'Cart' }"
-    >
+    <router-link class="button" :to="{ name: 'Cart' }">
       <i class="fas fa-shopping-cart"></i>
     </router-link>
   </nav>
