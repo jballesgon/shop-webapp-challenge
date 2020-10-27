@@ -1,6 +1,8 @@
 <template>
   <nav-bar></nav-bar>
-  <router-view />
+  <div class="m-4 md:m-8">
+    <router-view />
+  </div>
 </template>
 
 <script>
