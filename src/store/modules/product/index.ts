@@ -22,7 +22,7 @@ const productModule: Module<ProductState, {}> = {
   },
   mutations: {
     setProducts(state, products: Product[]) {
-      state.products = products
+      state.products = Object.freeze(products) as Product[]
     },
     setLoadingState(state, isLoading: boolean) {
       state.isLoading = isLoading

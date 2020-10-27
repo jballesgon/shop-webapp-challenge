@@ -5,13 +5,15 @@
     </router-link>
     <h1 class="text-2xl">{{ pageTitle }}</h1>
     <router-link class="button" :to="{ name: 'Cart' }">
-      <i class="fas fa-shopping-cart"></i>
+      <i class="fas fa-shopping-cart"></i> ({{ cartNumItems }})
     </router-link>
   </nav>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
+import { mapGetters } from 'vuex'
+
 import { routeReadableNames } from '../router/mappings'
 
 export default defineComponent({
@@ -20,6 +22,7 @@ export default defineComponent({
     pageTitle() {
       return routeReadableNames[this.$route.name]
     },
+    ...mapGetters('cart', ['cartNumItems']),
   },
 })
 </script>

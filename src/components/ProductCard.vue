@@ -15,7 +15,7 @@
       </p>
       <div class="flex items-end mt-4">
         <span>{{ product.stock }} left</span>
-        <button class="ml-auto button leading-none">+</button>
+        <button class="ml-auto button leading-none" @click="$emit('add-click', product)">+</button>
       </div>
     </div>
   </article>
@@ -29,8 +29,12 @@ import { Product } from '../models/product'
 export default defineComponent({
   name: 'ProductCard',
   props: {
-    product: { type: Object as PropType<Product>, required: true },
+    product: {
+      type: Object as PropType<Product>,
+      required: true,
+    },
   },
+  emits: ['add-click'],
 })
 </script>
 
